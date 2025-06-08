@@ -177,3 +177,86 @@ The `packets` object lists the packet types used for network communication, each
 | Property       | Type                | Description                                      |
 |----------------|---------------------|------------------------------------------------|
 | `pos` | `object` | Returns mouse pos {x: 0, y: 0} |
+
+## workertimers
+
+`workertimers` provides **Web Worker-based timers** for browsers, offering more accurate and reliable timing than native `setTimeout` and `setInterval`.
+
+---
+
+## `setTimeout(callback, delay)`
+
+Executes the given function once after the specified delay. Uses Web Worker for better timing accuracy.
+
+### Parameters
+
+- `callback` **(Function)**: The function to execute.
+- `delay` **(number)**: Delay time in milliseconds.
+
+### Returns
+
+- `number`: Timeout ID that can be canceled with `clearTimeout`.
+
+```js
+const id = workertimers.setTimeout(() => {
+  console.log('Executed after 1 second');
+}, 1000);
+```
+
+---
+
+## `clearTimeout(id)`
+
+Cancels a timeout created by `setTimeout`.
+
+### Parameters
+
+- `id` **(number)**: The ID of the timeout to cancel.
+
+### Returns
+
+- `void`
+
+```js
+workertimers.clearTimeout(id);
+```
+
+---
+
+## `setInterval(callback, interval)`
+
+Runs the given function repeatedly at specified intervals. Uses Web Worker for improved precision.
+
+### Parameters
+
+- `callback` **(Function)**: The function to run repeatedly.
+- `interval` **(number)**: Interval time in milliseconds.
+
+### Returns
+
+- `number`: Interval ID that can be canceled with `clearInterval`.
+
+```js
+const intervalId = workertimers.setInterval(() => {
+  console.log('Runs every 2 seconds');
+}, 2000);
+```
+
+---
+
+## `clearInterval(id)`
+
+Stops a repeating timer created by `setInterval`.
+
+### Parameters
+
+- `id` **(number)**: The ID of the interval to cancel.
+
+### Returns
+
+- `void`
+
+```js
+workertimers.clearInterval(intervalId);
+```
+
