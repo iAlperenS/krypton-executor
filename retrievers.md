@@ -143,12 +143,37 @@ The `packets` object lists the packet types used for network communication, each
 | `cam`       | `Object`            | Information related to the player's camera.      |
 | `craft`        | `Object`            | Data related to the crafting.              |
 | `chat`         | `Object`            | Chat interface and data.                           |
-| `inventory`    | `Array<Object>`     | Items in the player's inventory.                   |
+| `inv`    | `Array<Object>`     | Items in the player's inventory.                   |
+| `craft.preview`| `number`            | Preview the build |
+| `terminal`     | `Object` | Terminal interface and data. |
+| `uid` | `number` | Unit ID |
+| `inv.n` | `Array`| User's inventory data |
+| `all_inv`| `Array`| User's inventory data |
+
 
 ## `client`
 
 | Property       | Type                | Description                                      |
 |----------------|---------------------|------------------------------------------------|
-| `ws`           | `WebSocket`         | The game's WebSocket connection.                  |
-| `shot`         | `Function`          | The function responsible for shooting/fire action.|
+| `socket`           | `WebSocket`         | The game's WebSocket connection.                  |
+| `chat`         | `Function`          | The function responsible for get chatting.|
+| `send_chat` | `Function` | The function hooks sending chat |
+| `send_attack` | `Function` | The function for attacking |
+| `send_move` | `Function` | The function for moving |
+| `send_angle` | `Function` | The function for angle |
+| `select_inv` | `Function` | The function for select item in inv |
+| `send_build` | `Function` | The function build item |
+| `recycle_inv` | `Function` | The function for recycle item |
+| `select_craft` | `Function` | The function for craft item |
+| `give_item` | `Function` | The function for put item to chest |
 
+## `ui`
+| Property       | Type                | Description                                      |
+|----------------|---------------------|------------------------------------------------|
+| `chest_buttons` | `object` | Chest buttons in the game for making chest info |
+| `minimap` | `object` | Controls the minimap |
+
+## `mouse`
+| Property       | Type                | Description                                      |
+|----------------|---------------------|------------------------------------------------|
+| `pos` | `object` | Returns mouse pos {x: 0, y: 0} |
