@@ -56,7 +56,7 @@ This section lists the supported languages along with their language codes used 
 | Indonesian           | id    |
 
 ---
-# states
+## states
 
 The `STATE` object defines various status flags used in the game logic. Each state is represented by a unique power of two, allowing them to be combined using bitwise operations.
 
@@ -74,7 +74,7 @@ The `STATE` object defines various status flags used in the game logic. Each sta
 
 ---
 
-# packets
+## packets
 
 The `packets` object lists the packet types used for network communication, each mapped to a specific numeric code. These are used to identify different types of actions or commands sent between client and server.
 
@@ -104,6 +104,16 @@ The `packets` object lists the packet types used for network communication, each
 | join_totem       | 12   | Join a totem                  |
 | cancel_crafting  | 32   | Cancel crafting process       |
 | recycle          | 31   | Recycle item                  |
+
+---
+## movements
+| Pos         | Value | Description                      |
+|-------------|-------|---------------------------------|
+| left        | 1     | Left Code value for sendMove                 |
+| right       | 2     | Right Code value for sendMove    |
+| down        | 4     | Down Code value for sendMove       |
+| up          | 8     | Up Code value for sendMove                |
+| none        | 0     | None Code value for sendMove              |
 
 ---
 # sprite
