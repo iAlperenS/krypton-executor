@@ -282,5 +282,222 @@ Returns the attack range based on the player's held weapon and flying state.
 | No Weapon   | Any    | 97.6   |
 
 ---
+## `joinTotem(pid, id)`
+Joins the player to a totem.
 
+### Parameters
+- `pid` **(number)**: The player's ID.
+- `id` **(number)**: The totem's ID.
+
+### Returns
+- `void`
+
+---
+
+## `equipItem(id)`
+Equips an item to the player.
+
+### Parameters
+- `id` **(number)**: The item ID to equip.
+
+### Returns
+- `void`
+
+---
+
+## `takeExtractor(pid, id, extid)`
+Takes resources from an extractor.
+
+### Parameters
+- `pid` **(number)**: Player ID.
+- `id` **(number)**: Extractor object ID.
+- `extid` **(number)**: Extractor inv ID.
+
+### Returns
+- `void`
+
+---
+
+## `putExtractor(pid, id, extid)`
+Puts resources into an extractor.
+
+### Parameters
+- `pid` **(number)**: Player ID.
+- `id` **(number)**: Extractor object ID.
+- `extid` **(number)**: Extractor inv ID.
+
+### Returns
+- `void`
+
+---
+
+## `putOven(pid, id)`
+Puts flour and wood into an oven.
+
+### Parameters
+- `pid` **(number)**: Player ID.
+- `id` **(number)**: Oven object ID.
+
+### Returns
+- `void`
+
+---
+
+## `takeOven(pid, id)`
+Takes bread from the oven.
+
+### Parameters
+- `pid` **(number)**: Player ID.
+- `id` **(number)**: Oven object ID.
+
+### Returns
+- `void`
+
+---
+
+## `putWindmill(pid, id)`
+Puts resources into a windmill.
+
+### Parameters
+- `pid` **(number)**: Player ID.
+- `id` **(number)**: Windmill object ID.
+
+### Returns
+- `void`
+
+---
+
+## `takeWindmill(pid, id)`
+Takes resources from a windmill.
+
+### Parameters
+- `pid` **(number)**: Player ID.
+- `id` **(number)**: Windmill object ID.
+
+### Returns
+- `void`
+
+---
+
+## `DropItem(id)`
+Drops an item from the inventory.
+
+### Parameters
+- `id` **(number)**: The ID of the item to drop.
+
+### Returns
+- `void`
+
+---
+
+## `sendMove(movement)`
+Sends a movement signal to the server.
+
+### Parameters
+- `movement` **(number)**: Movement direction or state.
+
+### Returns
+- `void`
+
+---
+
+## `ReBorn(pid, id)`
+Reborns the player.
+
+### Parameters
+- `pid` **(number)**: Player ID.
+- `id` **(number)**: Resurrection ID.
+
+### Returns
+- `void`
+
+---
+
+## `putBuild(id)`
+Places a building at the current angle.
+
+### Parameters
+- `id` **(number)**: Building ID.
+
+### Returns
+- `void`
+
+---
+
+## `takeChest(pid, id)`
+Takes contents from a chest.
+
+### Parameters
+- `pid` **(number)**: Player ID.
+- `id` **(number)**: Chest object ID.
+
+### Returns
+- `void`
+
+---
+
+## `sendAngle(angl)`
+Sends player rotation angle to the server.
+
+### Parameters
+- `angl` **(number)**: Rotation angle in radians.
+
+### Returns
+- `void`
+
+---
+
+## `sendAttack(angl)`
+Sends an attack command at a specific angle.
+
+### Parameters
+- `angl` **(number)**: Attack angle in radians.
+
+### Returns
+- `void`
+
+---
+
+## `stopAttack()`
+Stops the current attack action.
+
+### Parameters
+- _None_
+
+### Returns
+- `void`
+
+---
+## `getFood()`
+Returns the first available food item in the inventory that can be selected.
+
+### Parameters
+- _None_
+
+### Returns
+- `number|null`: The inventory ID of the available food item, or `null` if none are available.
+
+---
+
+## `calcMeandEnemy(myPlayer, enemy, isTrue)`
+Calculates the angle between the player and an enemy, using either relative or absolute coordinates.
+
+### Parameters
+- `myPlayer` **(Object)**: The current player's data.
+- `enemy` **(Object)**: The enemy's data.
+- `isTrue` **(boolean)**: Whether to use `.r.x` and `.r.y` (true) or `.x` and `.y` (false) properties.
+
+### Returns
+- `number|null`: The angle in radians between the player and the enemy, or `null` if any object is missing.
+
+---
+
+## `send(data)`
+Sends a raw data packet to the server through the socket.
+
+### Parameters
+- `data` **(Array|Object)**: The data to send, which will be serialized using `JSON.stringify`.
+
+### Returns
+- `void`
 
