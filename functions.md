@@ -45,7 +45,60 @@ Defines a getter for a given property that returns the value of a different key.
 - `void`
 
 ---
+## `setKeybinds(config)`
 
+Registers and manages a global keybinding system using a configuration object. This system supports toggle and hold-based functionality for in-game cheats or tools.
+
+### Parameters
+
+- `config` **(Object)**:  
+  The object defining keybind settings. Each key in the object should follow this structure:
+  
+  - `k` **(string)**: The keyboard key code (e.g., `"KeyX"`)
+  - `toggle` **(boolean)**: If `true`, key toggles a value; if `false`, the feature is held down
+  - `e` or `enabled` **(boolean)** *(optional)*: The state of the feature (auto-toggled or used on hold)
+
+### Example
+
+```js
+const Settings = {
+  Xray: { k: "KeyX", e: false, toggle: true },
+  aimbot: { k: "KeyA", e: false, toggle: true },
+  AutoSpike: { k: "KeyZ", enabled: false, toggle: false },
+  DropSword: { k: "KeyQ", toggle: false }
+};
+
+setKeybinds(Settings);
+```
+
+---
+## `addKeybind(object, name, keyCode, toggle)`
+
+Adds a new keybind to a settings object under a specific name. This is useful when building dynamic or structured keybind configurations.
+
+### Parameters
+
+- `object` **(Object)**:  
+  The settings object where the keybind will be added.
+
+- `name` **(string)**:  
+  The key (property name) under which to store the keybind (e.g. `"Xray"`).
+
+- `keyCode` **(string)**:  
+  The keyboard key code (e.g. `'KeyX'`, `'KeyG'`) that triggers the keybind.
+
+- `toggle` **(boolean, default = true)**:  
+  If `true`, pressing the key will toggle `e` on or off.  
+  If `false`, the keybind will be handled as hold-to-activate (`enabled` style).
+
+### Example
+
+```js
+const Settings = {};
+addKeybind(Settings, "Xray", "KeyX", true);
+```
+
+---
 ## `canSelect(id)`
 
 Checks whether a given item ID exists in the user's inventory.
