@@ -159,6 +159,17 @@ The `packets` object lists the packet types used for network communication, each
 | `uid` | `number` | Unit ID |
 | `inv.n` | `Array`| User's inventory data |
 | `all_inv`| `Array`| User's inventory data |
+| `hp` | `number` | Player's health |
+| `food` | `number` | Player's hunger |
+| `temp` | `number` | Player's temp |
+| `water` | `number` | Player's water |
+| `heat` | `number` | Player's heat |
+| `map.death.x` | `number`| Player's death position x |
+| `map.death.y` | `number`| Player's death position y |
+| `map.totem.x` | `number`| Player's totem position x |
+| `map.totem.y` | `number`| Player's totem position y |
+| `blizard` | `bool` | World blizard status |
+| `sandstorm` | `bool` | World sandstorm status |
 
 
 ## `client`
